@@ -19,3 +19,13 @@ In order to initiate requests, use an instance of BillingService directly, such 
           
         billingService.RequestPurchase("net.myapp.item1");
         
+        
+Security
+========
+When testing with a developer account, you can receive signed responses from the google play service. You'll need to place your public key within the Security.cs file as a temporary way to validate the signed data. Long-term, you'll want to find a better way to store your public key.
+
+I wasn't able to receive signed responses until I signed the .APK file. Refer to: http://docs.xamarin.com/android/tutorials/Preparing_Package_for_Android_Marketplace
+
+You will also want to read the following link, regarding testing: 
+http://developer.android.com/guide/google/play/billing/billing_testing.html
+        
