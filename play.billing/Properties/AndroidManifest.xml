@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="play.billing" android:installLocation="internalOnly" android:versionCode="1" android:versionName="1">
+	<uses-sdk android:targetSdkVersion="8" />
+	<application android:label="Play Billing" android:icon="@drawable/icon">
+
+		<service android:name="play.billing.BillingService" />
+		<receiver android:name="play.billing.BillingReceiver">
+			<intent-filter>
+				<action android:name="com.android.vending.billing.IN_APP_NOTIFY" />
+				<action android:name="com.android.vending.billing.RESPONSE_CODE" />
+				<action android:name="com.android.vending.billing.PURCHASE_STATE_CHANGED" />
+			</intent-filter>
+		</receiver>
+	</application>
+	<uses-permission android:name="com.android.vending.BILLING" />
+</manifest>
